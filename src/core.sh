@@ -83,6 +83,26 @@ sudo apt-get install apt-transport-https -y
 sudo apt-get update && sudo apt-get install code -y
 
 
+echo 'Installing VLC'
+sudo apt-get install vlc -y
+sudo apt-get install vlc-plugin-access-extra libbluray-bdj libdvdcss2 -y
+
+echo 'Installing Discord'
+wget -O discord.deb "https://discordapp.com/api/download?platform=linux&format=deb"
+sudo dpkg -i discord.deb
+sudo apt-get install -f -y && rm discord.deb
+
+echo 'Installing Zoom'
+wget -c https://zoom.us/client/latest/zoom_amd64.deb
+sudo dpkg -i zoom_amd64.deb
+sudo apt-get install -f -y && rm zoom_amd64.deb
+
+echo 'Installing Spotify' 
+curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+sudo apt-get update && sudo apt-get install spotify-client -y
+
+
 # enable syntax highlighting for all the available languages
 find /usr/share/nano/ -iname "*.nanorc" -exec echo include {} \; >> ~/.nanorc
 
