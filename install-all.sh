@@ -3,13 +3,13 @@
 . ./src/core.sh
 
 # languages
-. ./src/languages/java.sh
+# . ./src/languages/java.sh
 . ./src/languages/python.sh
 . ./src/languages/javascript.sh
 
 # db
-. ./src/db/postgresql.sh
-. ./src/db/mysql.sh
+# . ./src/db/postgresql.sh
+#. ./src/db/mysql.sh
 
 # tools
 . ./src/tools/docker.sh
