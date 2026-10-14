@@ -21,3 +21,7 @@
 . ./src/aliases/generic.sh
 . ./src/aliases/apt.sh
 . ./src/aliases/docker.sh
+
+echo 'Updating and Cleaning Unnecessary Packages'
+sudo -- sh -c 'apt-get update; apt-get upgrade -y; apt-get full-upgrade -y; apt-get autoremove -y; apt-get autoclean -y'
+clear
